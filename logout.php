@@ -5,5 +5,5 @@
 
   session_destroy();
 
-  header("Location: http://localhost/TP_Rendir/TP_LIBRARIA_PROG1/index.php");
+  header("Location: http://localhost/TP_Final_Prog1/index.php");
   ?>

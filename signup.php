@@ -17,7 +17,7 @@ if (!empty($_POST['user']) && !empty($_POST['password'] && !empty($_POST['name']
     $message = 'Usuario creado';
   }
 
-  header("Location: /TP_Rendir/TP_LIBRARIA_PROG1/index.php");
+  header("Location: //TP_Final_Prog1/index.php");
 }
 ?>
 

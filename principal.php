@@ -2,7 +2,7 @@
 require "Books.php";
 $sql = "SELECT user_id FROM books WHERE user_id = 'NULL'";
 include 'conexion.php';
-include 'prueba.php';
+include 'querys.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +20,10 @@ include 'prueba.php';
     <br><select name="opcionLibro" class="seleccionar">
         <option value=""> Seleccione un libro</option>
         <?php
-        $prueba = new Prueba($conex);
+        $prueba = new Querys($conex);
         $prueba->popular();
         $prueba->nameuser();
+        $prueba->countLibros();
         ?>
     </select><br>
     <br><input type="submit" value="Alquilar" class="boton">
@@ -36,12 +37,25 @@ include 'prueba.php';
     $books = new Books();   
     $titulos = $books->getTitle();
     $texto = implode(", ", $titulos);
+
     echo $texto;
 
 ?></a>
 <br>
 
+<br>
+
+<a>Cantidad de libros que tenemos disponibles:
+    <?php 
+    $querys = new Querys($conex);   
+    $count = $querys->countLibros();
+    
+    echo $count;
+
+?></a>
+<br>
+
 </br>
-<a href="/TP_Rendir/TP_LIBRARIA_PROG1/logout.php"> Desloguearse </a>
+<a href="//TP_Final_Prog1/logout.php"> Desloguearse </a>
 </br>
 </html>

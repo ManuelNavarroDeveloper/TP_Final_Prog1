@@ -2,7 +2,7 @@
 
 require 'conexion.php';
 
-class Prueba{
+class Querys{
 
     public function __construct($conex){
         $this->conex = $conex;       
@@ -35,6 +35,14 @@ class Prueba{
             echo "<option value =\"" . $users[0] . "\">" . $users[3] . "</option>";
         }
         return;
+    }
+
+    function countLibros()
+    {
+        $queryCount = "SELECT COUNT(*) FROM books WHERE user_id IS NULL";
+        $getCount = mysqli_query($this->conex, $queryCount);
+        $count = mysqli_fetch_assoc($getCount);
+        return $count['COUNT(*)'];
     }
 
 }

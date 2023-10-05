@@ -64,6 +64,6 @@ include 'querys.php';
 <br>
 
 </br>
-<a href="//TP_Final_Prog1/logout.php"> Desloguearse </a>
+<a href="/TP_Final_Prog1/logout.php"> Desloguearse </a>
 </br>
 </html>

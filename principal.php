@@ -3,6 +3,7 @@ require "Books.php";
 $sql = "SELECT user_id FROM books WHERE user_id = 'NULL'";
 include 'conexion.php';
 include 'querys.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ include 'querys.php';
     <meta name="viewport" content="width=device-width">
     <title>Libreria</title>
 </head>
-<form action="cookie.php" method="post">
+<form action="alquiler.php" method="post">
     <h2> Elige el libro que quieres alquilar </h2><br>
     <label> Libros disponibles: </label><br>
 
@@ -26,7 +27,14 @@ include 'querys.php';
         $prueba->countLibros();
         ?>
     </select><br>
-    <br><input type="submit" value="Alquilar" class="boton">
+    <br><input type="submit" value="alquilar" class="boton">
+</form>
+
+<br>
+
+<form action="devolucion.php" method="post">
+    <label> Devuelva todos sus libros alquilados </label><br>
+    <br><input type="submit" value="devolver" class="boton">
 </form>
 </body>
 

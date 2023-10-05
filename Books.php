@@ -59,6 +59,21 @@ class Books{
     //     return $this->genre;
     // }  
 
+
+    public function getTitleAlquilado()
+    
+      {        
+        $pdo = new PDO('mysql:dbname=libreria;host=localhost', 'root', '');
+
+        $query = "SELECT DISTINCT `title` FROM `books` WHERE `user_id` IS NOT NULL";
+        
+        $stmt = $pdo->query($query);
+        
+        $resultados = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        
+        return $resultados;
+
+    }
 }
 
 
